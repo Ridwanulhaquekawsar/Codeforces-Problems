@@ -60,3 +60,69 @@ int main(){
     cin.tie(); solve();
     return 0;
 }
+
+
+★★★✪‌→★★★✪‌→★★★✪‌→★★★✪‌→★★★✪‌
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int n,i,sz; string s;
+
+class cmp{
+    public:
+    bool operator()(pair<char,int>l,pair<char,int>r){
+          return l.second<r.second;  
+    }
+};
+
+void solve(){
+    cin>>n; vector<pair<char,int>>small,capital,ans;
+    
+    while(n--){
+        cin>>s; small.clear(),capital.clear(),ans.clear();
+        
+        i=0; sz=s.size();
+        while(i<sz){
+            if(s[i]=='b'){
+                if(small.size()>0){
+                    small.pop_back();
+                }
+            }
+            else if(s[i]=='B'){
+                if(capital.size()>0){
+                    capital.pop_back();
+                }
+            }
+            else if(s[i]>='a' && s[i]<='z'){
+                small.push_back({s[i],i});
+            }
+            else{
+                capital.push_back({s[i],i});
+            }
+            
+            i++;
+        }
+        
+        
+        for(auto &p : small){
+            ans.push_back(p);
+        }
+        for(auto &p : capital){
+            ans.push_back(p);
+        }
+            
+        sort(ans.begin(),ans.end(),cmp());
+            
+        for(auto &p : ans){
+            cout<<p.first;
+        }
+        cout<<'\n';
+    }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr); solve();
+    return 0;
+}
