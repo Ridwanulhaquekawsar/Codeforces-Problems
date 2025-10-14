@@ -61,10 +61,7 @@ void solve(){
         for(auto &c : s) st.insert(c);
         for(auto &c : st) auxi_box.push_back(c);
         
-        
-        auxi_sz=auxi_box.size();
-        
-        i=0;
+        i=0,auxi_sz=auxi_box.size();
         while(i<auxi_sz){
             mirror[auxi_box[i]]=auxi_box[auxi_sz-1-i];
             i++;
