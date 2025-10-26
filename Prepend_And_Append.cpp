@@ -23,3 +23,29 @@ int main(){
     ios_base::sync_with_stdio(false),cin.tie(nullptr);
     cin>>t; while(t--) solve();
 }
+
+☆••••••✰ ☆••••••✰ ☆••••••✰ ☆••••••✰ ☆••••••✰ 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int t,n,l,r,ans; string s;
+
+void solve(){
+    cin>>n>>s;
+    
+    l=0,r=n-1,ans=n;
+    while(l<r){
+        if(s[l]==s[r]) break;
+        else ans-=2;
+         
+        l++,r--;
+    }
+    
+    cout<<ans<<'\n';
+}
+
+int main(){
+    ios_base::sync_with_stdio(false),cin.tie(nullptr);
+    cin>>t; while(t--) solve();
+}
