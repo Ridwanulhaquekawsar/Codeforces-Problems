@@ -8,7 +8,11 @@ void solve(){
     
     i=0,j=n-1,flag=false;
     while(s[i]!=s[j]){
-        if(i>j) flag=true;
+        if(i>j){
+            flag=true;
+            break;
+        }   
+         
         i++,j--;
     }
     
