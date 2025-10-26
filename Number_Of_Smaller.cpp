@@ -32,3 +32,36 @@ int main(){
     ios_base::sync_with_stdio(false),cin.tie(nullptr);
     solve(); return 0;
 }
+
+
+☆☆☆☆☆✰ ☆☆☆☆☆✰ ☆☆☆☆☆✰ ☆☆☆☆☆✰ ☆☆☆☆☆✰ 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int n,m,l,r,cnt; vector<int>a,b;
+
+void solve(){
+    cin>>n>>m;
+    a.resize(n),b.resize(m);
+    
+    for(int i=0; i<n; i++) cin>>a[i];
+    for(int i=0; i<m; i++) cin>>b[i];
+    
+    l=0,r=0,cnt=0;
+    while(r<m){
+        if(l<n && a[l]<b[r]){
+            cnt++;
+            l++;
+        }
+        else{
+            cout<<cnt<<" ";
+            r++;
+        }
+    }    
+}
+
+int main(){
+    ios_base::sync_with_stdio(false),cin.tie(nullptr);
+    solve(); return 0;
+}
