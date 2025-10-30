@@ -32,7 +32,8 @@ void solve(){
     checker_n=0;
     checker_m=0;
     
-    while(l<n || r<m){
+    
+    while(1){
         if(a_flag){
             while(a[l]<=k){
                 checker=0;
@@ -44,7 +45,6 @@ void solve(){
                 else dq.push_back(a[l]);
                 l++;
                 
-                //cout<<4<<nl;
                 
                 if(l==n){
                     checker_n++;
@@ -66,7 +66,6 @@ void solve(){
                 else dq.push_back(b[r]);
                 r++;
                 
-                //cout<<3<<nl;
                 
                 if(r==m){
                     checker_m++;
@@ -78,17 +77,17 @@ void solve(){
             if(r<m && checker_n==1 && b[r]>k) checker_n++;
         }
         
-        if(checker_n==2 && checker_m==2) break;
+        if(checker_n && checker_m) break;
             
         if(checker==2 || checker_n==2 || checker_m==2){
             cout<<"-1"<<nl;
             return;
         }
+           
             
         a_flag=!a_flag;
     }
     
-    //cout<<1<<nl;
     
     for(auto &x : dq) cout<<x<<" ";
     cout<<nl;
