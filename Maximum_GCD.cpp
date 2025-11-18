@@ -9,8 +9,8 @@ ll t,n;
 void solve(){
     cin>>n;
     
-    if(n % 2) cout<<(n-1)/2;
-    else cout<<n/2;
+    if(n % 2) cout<<(n-1)/2<<nl;
+    else cout<<n/2<<nl;
 }
 
 int main(){
