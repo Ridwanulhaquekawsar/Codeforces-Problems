@@ -1,3 +1,33 @@
+/*
+Sunday , 25 January , 2026 !
+
+☑ 4th problem of the day done ! ╰┈➤ (Codeforces Round 1076 (Div 3) )
+
+• Problem No. D (Monster Game) ! 
+
+• Problem Link : ⤵︎
+https://codeforces.com/contest/2193/problem/D
+
+Observation & Approach : 🕵🏻‍♂️ & 🎯
+
+- We'll take all unique element then check how many val(strength of swords in first array a) greater or equal than this unique val(considers this as a current complexity).  This val will indicates that how many swords has the ability to kills a moster ! 
+
+- After that we will use this swords number to for every unique number complexity(from set) to pass the level of array b. 
+
+- Now, We'll calculate the prefix of b to see that, using this swords number how many level we can pass, as b[i] indicating the level then using this prefix sum we want to pass level by level throught indexing, se here we can use binary search concept lower_bound / upper_bound to see using this swords in which indexed level we reach !  
+
+- And then We we'll calculate the score  mx = max(mx, (complexity * level already we passed) ) ;
+
+Time Complexity : 🧠🧮𒅒🤔 O(nlogn) ! 
+
+Implementation Uses : </> 👨🏻‍💻 Search, Pefix sum, set ! 
+*/
+
+
+
+
+Code : 👇
+
 #include<bits/stdc++.h>
 using namespace std;
 #define FastIO() ios::sync_with_stdio(0),cin.tie(0)
