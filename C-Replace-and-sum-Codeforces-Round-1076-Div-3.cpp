@@ -1,3 +1,33 @@
+/*
+Monday, 25 January , 2026 !
+
+☑ Third problem of the day done ! ╰┈➤ (Codeforces Round 1076 (Div 3) )
+
+• Problem No. C (Replace And Sum) ! 
+
+• Problem Link : ⤵︎
+https://codeforces.com/contest/2193/problem/C
+
+Observation : 🕵🏻‍♂️ 
+
+   • If we make first array's elements as large as possible in the 1st step by replacing a's elemts with b's elements,  And then in second step we can easy propagate the first array's element as large as we can by iterating from backward to begining  replace  operation ! 
+   
+Approach  : 👇 🎯
+
+- At first, we'll precalculate the the array a with the help of b array by replacing value of a,  a[i] = max(a[i], b[i]);
+
+- And then we'll run another loop for array a only from end to begin by propagating large value as much as we can ! 
+
+- Lastly we will calculate the prefix sum of first array a and then in the query part, we will simple print the l to r intermediate sum by (prf[r] - prf[l - 1] if l > 1) ! 
+
+Time Complexity :  O(n)  📝 ! 
+
+Implementation Uses : </> 👨🏻‍💻  Prefix Sum ! 
+*/
+
+
+Code : 👇
+
 #include<bits/stdc++.h>
 using namespace std;
 #define FastIO() ios::sync_with_stdio(0),cin.tie(0)
