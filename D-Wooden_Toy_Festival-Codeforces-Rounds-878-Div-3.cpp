@@ -193,6 +193,7 @@ ll l, r;
 ll ans;
 ll k;
 ll cnt;
+ll mid;
 
 void solve(){
     in n;
@@ -200,13 +201,13 @@ void solve(){
     
     sort(all(v) );
     
-    auto ok = [&](ll mid){
+    auto ok = [&](ll time){
         cnt = 1;
         k = 0;
         
         rep(j, n){
             // It' s Indicating The Max Coverage Range ! 
-            if(v[j] - v[k] > 2 * mid){
+            if(v[j] - v[k] > 2 * time){
                 cnt++;
                 
                 if(cnt > 3) return 0;
@@ -221,8 +222,6 @@ void solve(){
     l = 0; // (Best-Case) Scenerio -> Min Waiting Time ! 
     r = 2e8; // (Worst-Case) Scenerio -> Max Waiting Time ! 
     // (l & r) Represent The Search Interval(Space) ! 
-    
-    ll mid;
     
     wh(l <= r){
         mid = l + (r - l)/2;
